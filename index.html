@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Square root app by kamal sir</title>
+	<style type="text/css">
+		* {
+			font-size: 50px;
+			font-family: Impact;
+		}
+		body {background-color: lightyellow; }
+	</style>
+	<script type="text/javascript">
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById('num');
+			let ans = document.getElementById('ans');
+
+			if (num.value == "")
+			{
+				alert("U did not enter a number");
+				ans.innerHTML= "";
+				num.focus();
+				return;
+			}
+			let n = parseFloat(num.value);
+			let res = "";
+			res = (n**0.5).toFixed(2);
+			ans.innerHTML = res;
+		}
+	</script>
+</head>
+<body>
+	<center>
+		<h1>Square root Finder</h1>
+		<form onsubmit="check()">
+			<input type="number" id = "num" step ="any" placeholder = "Enter a Number"/>
+			<br><br>
+			<input type="submit" value="Find Sqrt"/>
+		</form>
+		<h1 id ="ans"></h1>
+	</center>
+
+</body>
+</html>
